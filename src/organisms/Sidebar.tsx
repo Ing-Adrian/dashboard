@@ -19,6 +19,8 @@ const Sidebar: React.FC = () => {
                 backgroundColor: '#fff',
                 position: 'fixed',
                 height: '100vh',
+                overflow: 'auto',
+                scrollbarWidth: 'thin',
                 top: 0,
                 left: 0,
                 border: '1px solid silver',

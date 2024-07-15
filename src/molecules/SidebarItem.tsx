@@ -16,10 +16,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, title, isActive, onClic
             sx={{
                 marginBottom: 2,
                 cursor: 'pointer',
+                width: '10vw',
                 padding: 1.5,
                 display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
+                alignItems: 'center',
                 opacity: isActive ? 1 : 0.5,
                 color: isActive ? '#2d60ff' : '',
                 background: isActive ? 'linear-gradient(to right, #2d60ff 3%,transparent 3%)' : 'transparent',
@@ -30,23 +30,20 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, title, isActive, onClic
             }}
             onClick={onClick}
         >
-            <Grid container alignItems='center'>
-                <Grid item>
-                    {IconWithStyles}
-                </Grid>
-                <Grid item>
-                    <Typography sx={{
-                        marginLeft: 1,
-                        width: "1vw",
-                        fontWeight: 'bolder',
-                        fontFamily: 'sans-serif',
-                        opacity: isActive ? 1 : 0.5
-                    }}
-                    >
-                        {title}
-                    </Typography>
-                </Grid>
-            </Grid>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                {IconWithStyles}
+            </Box>
+            <Typography
+                sx={{
+                    marginLeft: 1,
+                    fontSize: '1.2vw',
+                    fontWeight: 'bolder',
+                    fontFamily: 'sans-serif',
+                    opacity: isActive ? 1 : 0.5,
+                }}
+            >
+                {title}
+            </Typography>
         </Box>
     );
 };
